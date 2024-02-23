@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Main.module.css';
 import heroImg from '../../images/hero_img.png';
+import Slider from '../Slider/Slider.jsx';
 
 
 const Main = () => {
@@ -28,7 +29,7 @@ const Main = () => {
                         <div className={styles.question}></div>
                     </div>
                     <div className={styles.swapper}>
-
+                        <Slider />
                     </div>
                 </div>
             </section>
