@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from './Header.css';
+import styles from './Header.module.css';
 
 const Header = () => {
     return (
         <div className={styles.Header}>
-            1
+            <div className={styles.header_white}></div>
+            <div className={styles.header_green}></div>
         </div>
     );
 };

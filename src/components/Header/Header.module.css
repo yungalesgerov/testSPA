@@ -1,0 +1,14 @@
+.Header {
+    width: 100%;
+    height: 110px;
+}
+.header_white {
+    width: 100%;
+    height: 67px;
+    background: #fff;
+}
+.header_green {
+    width: 100%;
+    height: 43px;
+    background: #1FA181;
+}
