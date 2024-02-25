@@ -2,9 +2,11 @@ import React from 'react';
 import styles from './Main.module.css';
 import heroImg from '../../images/hero_img.png';
 import Slider from '../Slider/Slider.jsx';
+import { useSwiper } from 'swiper/react';
 
 
 const Main = () => {
+    const swiper = useSwiper();
     return (
         <div className={styles.Main}>
             <section className={styles.hero}>

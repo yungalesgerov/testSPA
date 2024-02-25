@@ -1,0 +1,25 @@
+.arrow_block {
+    display: flex;
+    margin: 0 auto;
+    width: 169px;
+    height: 34px;
+    align-items: center;
+    gap: 36px;
+    span {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+}
+.arrow {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+        filter: invert(66%) sepia(66%) saturate(3057%) hue-rotate(121deg) brightness(90%) contrast(90%);
+    }
+};
+.arrow_blocked {
+    pointer-events: none;
+}
