@@ -8,6 +8,11 @@
     span {
         font-size: 18px;
         line-height: 24px;
+        color: #808080;
+        tt {
+            color: black;
+            font-size: 20px;
+        }
     }
     
 }
@@ -15,11 +20,54 @@
     width: 34px;
     height: 34px;
     cursor: pointer;
+    filter: invert(54%) sepia(3%) saturate(3%) hue-rotate(63deg) brightness(93%) contrast(89%);
     &:hover {
         transform: scale(1.1);
-        filter: invert(66%) sepia(66%) saturate(3057%) hue-rotate(121deg) brightness(90%) contrast(90%);
+        filter: invert(51%) sepia(27%) saturate(4761%) hue-rotate(125deg) brightness(100%) contrast(103%);
     }
 };
 .arrow_blocked {
     pointer-events: none;
+}
+.img_wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+.img_content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 26px;
+    margin-top: 53px;
+    margin-left: 63px;
+    h1 {
+        border:none;
+        width: 181px;
+        height: 49px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+    h2 {
+        margin: 0;
+    }
+    ul {
+        margin: 0;
+        padding-left: 20px;
+        li::marker {
+            color:#0DBC91;
+        }
+    }
+    tt {
+        text-decoration: line-through;
+        margin-left: 16px;
+        color: grey;
+    }
+}
+.buttons {
+    display: flex;
+    gap: 14px;
+    margin-left: 63px;
 }

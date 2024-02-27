@@ -1,0 +1,18 @@
+
+
+.button {
+    width: 196px;
+    height: 43px;
+    border-radius: 20px;
+    color: #fff;
+    font-size:14px;
+    line-height: 14px;
+    font-family: 'PT Sans Caption';
+    font-weight: 400;
+    border:1px solid #0DBC91;
+    &:hover {
+        background-color: #00D29F !important;
+        color: #fff !important;
+        transform: scale(1.05);
+    }
+}

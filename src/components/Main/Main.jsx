@@ -3,6 +3,7 @@ import styles from './Main.module.css';
 import heroImg from '../../images/hero_img.png';
 import Slider from '../Slider/Slider.jsx';
 import { useSwiper } from 'swiper/react';
+import Questions from '../ui/Questions/Questions.jsx';
 
 
 const Main = () => {
@@ -24,12 +25,7 @@ const Main = () => {
             <section className={styles.secondary}>
                 <div className={styles.secondary_wrapper}>
                     <h1>Часто задаваемые вопросы</h1>
-                    <div className={styles.questions_list}>
-                        <div className={styles.question}></div>
-                        <div className={styles.question}></div>
-                        <div className={styles.question}></div>
-                        <div className={styles.question}></div>
-                    </div>
+                    <Questions num={4} />
                     <div className={styles.swapper}>
                         <Slider />
                     </div>

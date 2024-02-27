@@ -2,4 +2,34 @@
     height: 144px;
     width: 100%;
     background: #08664F;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(276deg) brightness(200%) contrast(102%);
+    margin-left: 34%;
+    margin-right: 22%;
+}
+.wrapper {
+    width: 61%;
+    margin-right: 10%;
+    display: flex;
+    img {
+        width: 92px;
+        height: 27px;
+    }
+}
+.footer_links {
+    width: 482px;
+    display: flex;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+.icon {
+    width: 35px;
+    height: 35px;
+    margin-left: 1%;
 }

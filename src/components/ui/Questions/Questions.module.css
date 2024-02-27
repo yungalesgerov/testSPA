@@ -1,0 +1,17 @@
+.questions_list {
+    width: 100%;
+    height: 736px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    padding: 0;
+    list-style: none;
+
+    .question {
+        min-height: 108px;
+        width: 100%;
+        /* height: 24%; */
+        border: 1px solid red
+    }
+}
