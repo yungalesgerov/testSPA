@@ -10,7 +10,7 @@ const Footer = () => {
         <div className={styles.footer}>
             <div className={styles.wrapper}>
                 <img src={logo} className={styles.logo} />
-                <div className={styles.footer_links}>
+                <div className={styles.footer_m_links}>
                     <a href='#'>О клинике</a>
                     <a href='#'>Услуги</a>
                     <a href='#'>Специалисты</a>
@@ -18,9 +18,18 @@ const Footer = () => {
                     <a href='#'>Контакты</a>
                 </div>
             </div>
-            <img src={inst} className={styles.icon} alt="icon" />
-            <img src={whats} className={styles.icon} alt="icon" />
-            <img src={tlg} className={styles.icon} alt="icon" />
+            <div className={styles.footer_links}>
+                <a href='#'>О клинике</a>
+                <a href='#'>Услуги</a>
+                <a href='#'>Специалисты</a>
+                <a href='#'>Цены</a>
+                <a href='#'>Контакты</a>
+            </div>
+            <div className={styles.social}>
+                <img src={inst} className={styles.icon} alt="icon" />
+                <img src={whats} className={styles.icon} alt="icon" />
+                <img src={tlg} className={styles.icon} alt="icon" />
+            </div>
         </div>
     );
 };

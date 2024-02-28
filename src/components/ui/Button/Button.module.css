@@ -10,6 +10,7 @@
     font-family: 'PT Sans Caption';
     font-weight: 400;
     border:1px solid #0DBC91;
+    cursor: pointer;
     &:hover {
         background-color: #00D29F !important;
         color: #fff !important;
