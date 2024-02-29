@@ -13,7 +13,7 @@
     width: 6%;
     margin-left: 13%;
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     img {
         width: 92px;
         height: 27px;
@@ -42,4 +42,40 @@
     width: 35px;
     height: 35px;
     margin-left: 1%;
+}
+
+@media screen and (max-width:768px) {
+    .footer {
+        height: 291px;
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-between;
+    }
+    .wrapper {
+        flex-direction: column;
+        width: 40%;
+        height: 80%;
+        align-items: center;
+        margin: 0;
+    }
+    .social {
+        width: 40%;
+        height: 80%;
+        display: flex;
+        gap: 10%;
+    }
+    .footer_links {
+        display: none;
+    }
+    .footer_m_links {
+        display: flex;
+        margin-top: 10%;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80%;
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
 }

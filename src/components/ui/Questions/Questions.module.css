@@ -17,7 +17,34 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: #F8FBFA;
 }
 .content {
     width: 80%;
+}
+.open {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 40px; */
+}
+.opened {
+    width: 24px;
+    height: 2px;
+    background-color: #0DBC91;
+}
+
+@media screen and (max-width:768px) {
+    .questions_list {
+        height: 1100px;
+    }
+    .content {
+        width: 100%;
+    }
+    .open {
+        display: none;
+    }
 }

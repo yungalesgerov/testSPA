@@ -6,9 +6,10 @@ class Questions extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            showed: false,
             error: null,
-            isLoaded: false,
-            items: []
+            items: [],
+            showStatus: {}
         }
     }
 
@@ -17,33 +18,42 @@ class Questions extends React.Component {
             .then(res => res.json())
             .then(result => {
                 this.setState({
-                    isLoaded: true,
                     items: result
                 })
             },
                 (error) => {
                     this.setState({
-                        isLoaded: true,
                         error
                     })
                 })
     }
+    toggleShow = (id) => {
+        this.setState(prevState => ({
+            showStatus: {
+                ...prevState.showStatus,
+                [id]: !prevState.showStatus[id]
+            }
+        }));
+    }
     render() {
-        const { error, isLoaded, items } = this.state;
+        const { error, items } = this.state;
         if (error) {
             return <p>Error{error.message}</p>
         } else {
             return (
                 <ul className={styles.questions_list}>
-                    {items.map(i=>(
+                    {items.map(i => (
                         <li className={styles.question} key={i.id}>
                             <div className={styles.content}>
-                                <h3>Заголовок часто задаваемого вопроса</h3>
-                                <span>{i.body}</span>
+                                {i.id === 2 ? <h3>Заголовок часто задаваемого вопроса с двумя абзацами</h3> : <h3>Заголовок часто задаваемого вопроса</h3>}
+                                {this.state.showStatus[i.id] &&
+                                    (<>
+                                        <p>{i.body}</p>
+                                        {i.id === 2 && <p><b>Это предложение должно здесь быть.</b><span>{i.body}</span></p>}
+                                    </>)}
                             </div>
-                            <div className={styles.open}>
-                                <img src={plus} alt="show" />
-                                <div className={styles.opened}></div>
+                            <div className={styles.open} onClick={() => this.toggleShow(i.id)}>
+                                {this.state.showStatus[i.id] ? <div className={styles.opened}  ></div> : <img src={plus} alt="show" />}
                             </div>
                         </li>
                     ))}
@@ -55,14 +65,3 @@ class Questions extends React.Component {
 
 export default Questions;
 
-
-// let questionItem = fetch(`https://jsonplaceholder.typicode.com/comments?_limit=5`);
-// // <li key={i.id} className={styles.question}>{i.body}
-// return (
-//     <ul className={styles.questions_list}>
-//         <li className={styles.question}>1</li>
-//         <li className={styles.question}>1</li>
-//         <li className={styles.question}>1</li>
-//         <li className={styles.question}>1</li>
-//     </ul>
-// );

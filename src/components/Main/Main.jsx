@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import styles from './Main.module.css';
 import heroImg from '../../images/hero_img.png';
 import Slider from '../Slider/Slider.jsx';
@@ -7,6 +7,16 @@ import Questions from '../ui/Questions/Questions.jsx';
 
 const Main = ({active,setActive}) => {
     const swiper = useSwiper();
+
+    const [value,setValue] = useState([]);
+
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/comments?_limit=1')
+            .then(res => res.json())
+            .then(result => setValue(result))
+    },[])
+    
+
     return (
         <div className={styles.Main}>
             <section className={styles.hero}>
@@ -17,7 +27,7 @@ const Main = ({active,setActive}) => {
                     <div className={styles.desc_wrapper}>
                         <h1>Многопрофильная клиника для детей
                             <br /> и взрослых</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>    
+                        <p>{value[0].body}</p>    
                     </div> 
                 </div>
             </section>

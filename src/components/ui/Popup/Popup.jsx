@@ -5,7 +5,7 @@ const Popup = ({active,setActive}) => {
     return (
         <div className={active? styles.popup:styles.hidden}>
             <div className={styles.popup_content}>
-                <button onClick={()=>setActive(!active)}><span>&times;</span></button>
+                <button className={styles.popup_button} onClick={()=>setActive(!active)}><span>&times;</span></button>
                 <div className={styles.popup_form}>
                     <div className={styles.popup_title}>
                         <h1>Запишитесь <br /> на приём онлайн</h1>

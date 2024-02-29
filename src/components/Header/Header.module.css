@@ -41,14 +41,41 @@
     align-items: center;
     height: 100%;
     margin-left: 14%;
-    /* justify-content: center; */
-    /* height: 100%; */
-    /* border: 1px solid red; */
     a {
         font-style: "PT Sans Caption";
         font-size: 16px;
         line-height: 24px;
         color: #fff;
         text-decoration: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        height: 375px;
+    }
+    .header_white {
+        height: 100%;
+        button {
+            display: none;
+        }
+        
+    }
+    .header_whats {
+        display: none;
+    }
+    .header_adds {
+        display: none;
+    }
+    .phone {
+        text-align: end;
+        font-weight: bold;
+        span {
+            font-weight: 100;
+            display: inline;
+        }
+    }
+    .header_green {
+        display: none;
     }
 }
