@@ -4,6 +4,7 @@
     background: #08664f;
     /* background-color: grey; */
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     display: flex;
@@ -56,12 +57,14 @@
 @media screen and (max-width:768px) {
     
     .popup_content {
-        width: 90%;
+        width: 370px;
         height: 70%;
+        /* display: flex; */
+        /* justify-content: center; */
         .popup_button {
             position: absolute;
             margin-top: 60px;
-            margin-left: 290px;
+            margin-left: 320px;
             transform: scale(2.1);
             span {
                 color: #08664f;

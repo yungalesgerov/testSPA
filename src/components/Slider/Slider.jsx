@@ -1,39 +1,32 @@
-import { React, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { React, useRef, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import img1 from '../../images/slide.svg';
 import img2 from '../../images/someImg.jpg';
 import arrow from '../../images/arrowL.svg';
 import styles from './Slider.module.css';
 import Button from '../ui/Button/Button';
-const Slider = ({active,setActive}) => {
-    const [count, setCount] = useState(1);
-    const swiperRef = useRef();
-    const increment = () => {
-        if (count >= 4) {
-            return false;
-        }
-        setCount(count + 1)
-    }
-    const decrement = () => {
-        if (count === 1) {
-            return false;
-        }   
-        setCount(count - 1)
-    }
-    const handleClick = () => {
-        setActive(!active);
-    }
+const Slider = ({ active, setActive }) => {
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const swiperRef = useRef(null);
+
+    const handleSlideChange = (swiper) => {
+        const currentIndex = swiper.activeIndex;
+        setActiveIndex(currentIndex);
+    };
+
     return (
         <>
-            <Swiper className={active? styles.hidden : styles.slide_wrapper}
+            <Swiper className={styles.slide_wrapper}
                 onSwiper={(swiper) => swiperRef.current = swiper}
                 spaceBetween={50}
                 slidesPerView={1}
+                onSlideChange={(swiper) => handleSlideChange(swiper)}
             >
                 <SwiperSlide >
                     <div className={styles.img_wrapper}>
-                        <div className={styles.img_overlay}>
+                        <div className={styles.first_div}>
                             <div className={styles.img_content}>
                                 <h1>CHECK UP</h1>
                                 <h2>для мучжин</h2>
@@ -49,11 +42,12 @@ const Slider = ({active,setActive}) => {
                                 <Button title='Записаться' callback={setActive} value={active} bg={'#0DBC91'} /><Button title='Подробнее' color={'#0DBC91'} />
                             </div>
                         </div>
+                        <div className={styles.second_div}></div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide >
                     <div className={styles.img_wrapper}>
-                        <div className={styles.img_overlay}>
+                        <div className={styles.first_div}>
                             <div className={styles.img_content}>
                                 <h1>CHECK UP</h1>
                                 <h2>для мучжин</h2>
@@ -69,11 +63,12 @@ const Slider = ({active,setActive}) => {
                                 <Button title='Записаться' callback={setActive} value={active} bg={'#0DBC91'} /><Button title='Подробнее' color={'#0DBC91'} />
                             </div>
                         </div>
+                        <div className={styles.second_div}></div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide >
                     <div className={styles.img_wrapper}>
-                        <div className={styles.img_overlay}>
+                        <div className={styles.first_div}>
                             <div className={styles.img_content}>
                                 <h1>CHECK UP</h1>
                                 <h2>для мучжин</h2>
@@ -89,11 +84,12 @@ const Slider = ({active,setActive}) => {
                                 <Button title='Записаться' callback={setActive} value={active} bg={'#0DBC91'} /><Button title='Подробнее' color={'#0DBC91'} />
                             </div>
                         </div>
+                        <div className={styles.second_div}></div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide >
                     <div className={styles.img_wrapper}>
-                        <div className={styles.img_overlay}>
+                        <div className={styles.first_div}>
                             <div className={styles.img_content}>
                                 <h1>CHECK UP</h1>
                                 <h2>для мучжин</h2>
@@ -109,6 +105,7 @@ const Slider = ({active,setActive}) => {
                                 <Button title='Записаться' callback={setActive} value={active} bg={'#0DBC91'} /><Button title='Подробнее' color={'#0DBC91'} />
                             </div>
                         </div>
+                        <div className={styles.second_div}></div>
                     </div>
                 </SwiperSlide>
             </Swiper>
@@ -117,15 +114,15 @@ const Slider = ({active,setActive}) => {
                     src={arrow}
                     className={styles.arrow}
                     alt=""
-                    onClick={() => { swiperRef.current.slidePrev(); decrement() }}
+                    onClick={() => swiperRef.current.slidePrev()}
                 />
-                <span><tt>{count}</tt>/4</span>
+                <span><tt>{activeIndex + 1}</tt>/4</span>
                 <img
                     src={arrow}
                     className={styles.arrow}
                     style={{ rotate: "180deg" }}
                     alt=""
-                    onClick={() => { swiperRef.current.slideNext(); increment() }}
+                    onClick={() => swiperRef.current.slideNext()}
                 />
             </div>
         </>

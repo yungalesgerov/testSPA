@@ -15,12 +15,17 @@
 .hero_img {
     width: 50%;
     height: 100%;
-
     img {
         width: 100%;
         height: 100%;
         background-image: cover;
     }
+}
+.hidden {
+    display: none;
+}
+.modal_window {
+    display: none;
 }
 
 .hero_desc {
@@ -60,8 +65,6 @@
     position: relative;
     gap: 40px;
     flex-direction: column;
-    border: 1px solid red;
-
     h1 {
         width: 60%;
         margin: 0 auto;
@@ -72,6 +75,9 @@
 }
 
 @media screen and (max-width:768px) {
+    .Main {
+        height: 2500px;
+    }
     .hero {
         flex-direction: column;
         align-items: center;
@@ -85,7 +91,6 @@
         height: 261px;
         .desc_wrapper {
             width: 90%;
-            border: 1px solid black;
             h1 {
                 width: 100%;
                 height: 102px;
@@ -109,5 +114,76 @@
             text-align: left;
         }
     }
-
+    .hidden {
+        display: none;
+    }
+    .modal_window {
+        width: 100%;
+        height: 2423px;
+        position: absolute;
+        background-color: rgba(31, 161, 129,0.9);
+        z-index: 2;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .modal_content {
+        width: 100%;
+        height: 50vh;
+        position: fixed;
+        margin-left: 20%;
+    }
+    .modal_content_list {
+        font-size: 1rem;
+        line-height: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 107px;
+        height: 160px;
+        padding: 48px 0 40px 0;
+        list-style-type: none;
+        li {
+            color: #fff;
+            font-size: 16px;
+            font-family:'PT Sans Caption';
+        }
+    }
+}
+@media screen and (min-width: 433px) and (max-width:768px) {
+    .Main {
+        height: 2170px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+    .Main {
+        height: 2100px;
+    }
+    .hero {
+        flex-direction: column;
+        height: 600px;
+    }
+    .hero_img,.hero_desc {
+        width: 100%;
+    }
+    .hero_desc {
+        .desc_wrapper {
+            width: 680px;
+            margin:5% auto;
+            h1 {
+                height: 120px;
+            }
+        }
+    }
+   
+}
+@media screen and (min-width:900px) and (max-width:1200px) {
+    .Main {
+        height: 2240px;
+    }
+    .hero {
+        flex-direction: column;
+        height: 750px;
+    }
+   
 }
