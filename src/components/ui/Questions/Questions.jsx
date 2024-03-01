@@ -1,5 +1,4 @@
 import React from 'react';
-// import { getData } from '../../../helpers/getData';
 import plus from '../../../images/plus.svg';
 import styles from './Questions.module.css';
 class Questions extends React.Component {
